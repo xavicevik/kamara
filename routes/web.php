@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
+
+Route::get('/categoria', 'App\Http\Controllers\CategoriaController@index');
+Route::post('/categoria/registrar', 'App\Http\Controllers\CategoriaController@store');
+Route::put('/categoria/actualizar', 'App\Http\Controllers\CategoriaController@update');
+Route::put('/categoria/desactivar', 'App\Http\Controllers\CategoriaController@desactivar');
+Route::put('/categoria/activar', 'App\Http\Controllers\CategoriaController@activar');
+
